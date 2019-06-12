@@ -93,6 +93,7 @@ void exportSimulationClasses(py::module m)
 
     aistSimulatorItemClass
         .def(py::init<>())
+        .def("setDynamicsMode", &AISTSimulatorItem::setDynamicsMode)
         .def("setIntegrationMode", &AISTSimulatorItem::setIntegrationMode)
         .def("setGravity", &AISTSimulatorItem::setGravity)
         .def("setFriction", (void (AISTSimulatorItem::*)(double, double)) &AISTSimulatorItem::setFriction)
