@@ -64,6 +64,12 @@ BodyHandlerManager::BodyHandlerManager()
 }
 
 
+BodyHandlerManager::~BodyHandlerManager()
+{
+    delete impl;
+}
+
+
 BodyHandlerManager::Impl::Impl()
 {
     handlerPaths.push_back(pluginDirPath() / "bodyhandler");
