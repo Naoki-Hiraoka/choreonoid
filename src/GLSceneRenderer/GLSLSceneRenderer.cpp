@@ -2413,6 +2413,11 @@ bool GLSLSceneRenderer::Impl::loadTextureImage(TextureResource* resource, const 
                           potWidth, potHeight, GL_UNSIGNED_BYTE, &scaledImageBuf.front());
             glTexImage2D(GL_TEXTURE_2D, 0, format, potWidth, potHeight, 0, format, GL_UNSIGNED_BYTE, &scaledImageBuf.front());
         }
+        if(format == GL_RED){
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_SWIZZLE_R, GL_RED);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_SWIZZLE_G, GL_RED);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_SWIZZLE_B, GL_RED);
+        }
         resource->isLoaded = true;
         resource->width = width;
         resource->height = height;
