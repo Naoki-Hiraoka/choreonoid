@@ -2054,7 +2054,7 @@ void SimulatorItem::Impl::run()
                     isOnPause = true;
                     sigSimulationPaused();
                 }
-                QThread::msleep(50);
+                QThread::msleep(1);
             } else {
                 if(isOnPause){
                     timer.start();
@@ -2081,7 +2081,7 @@ void SimulatorItem::Impl::run()
                     isOnPause = true;
                     sigSimulationPaused();
                 }
-                QThread::msleep(50);
+                QThread::msleep(1);
             } else {
                 if(isOnPause){
                     timer.start();
